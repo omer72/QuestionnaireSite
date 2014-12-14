@@ -1,0 +1,45 @@
+<form ng-submit="publishQuestion()" xmlns="http://www.w3.org/1999/html">
+    <H2>Add new Questionnaire</H2>
+    Title : <input type="text" ng-model="model.subject"/><br/>
+
+    <div class="dropdown">
+        <input type="radio" name="type" ng-model="model.male_female_both" value="m">Male</input>
+        <input type="radio" name="type" ng-model="model.male_female_both" value="f">Female</input>
+        <input type="radio" name="type" ng-model="model.male_female_both" value="b">Both</input>
+    </div>
+    Add Question <button type="button" ng-click="addQuestion()">+</button>
+    <ul ng-repeat="question in questions">
+        <li >
+            Question {{$index + 1}} Title <input type="text" ng-model="question.question"/><br/>
+        </li>
+        <li >
+            Question #1 <input type="text" ng-model="question.answer_1"/><input type="number" ng-model="question.answer_1_value" min="1" max="4"/><br/>
+        </li>
+        <li >
+            Question #2 <input type="text" ng-model="question.answer_2"/><input type="number" ng-model="question.answer_2_value" min="1" max="4"/><br/>
+        </li>
+        <li >
+            Question #3 <input type="text" ng-model="question.answer_3"/><input type="number" ng-model="question.answer_3_value" min="1" max="4"/><br/>
+        </li>
+        <li >
+            Question #4 <input type="text" ng-model="question.answer_4"/><input type="number" ng-model="question.answer_4_value" min="1" max="4"/><br/>
+        </li>
+    </ul>
+    <br/>
+    Answers:
+    <li >
+        Answer #1 <input type="text" ng-model="answers.answer_1"/><br/>
+    </li>
+    <li >
+        Answer #2 <input type="text" ng-model="answers.answer_2"/><br/>
+    </li>
+    <li >
+        Answer #3 <input type="text" ng-model="answers.answer_3"/><br/>
+    </li>
+    <li >
+        Answer #4 <input type="text" ng-model="answers.answer_4"/><br/>
+    </li>
+
+    <button type="submit" >Submit</button>
+    {{done}}
+</form>
